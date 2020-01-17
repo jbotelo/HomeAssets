@@ -3,20 +3,22 @@ using System;
 using HomeAssets.Models.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace HomeAssets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200110191131_onDeleteRestrict")]
+    partial class onDeleteRestrict
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                .HasAnnotation("ProductVersion", "3.1.1")
+                .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("HomeAssets.Models.ExtendedIdentity.App_IdentityUser", b =>
@@ -84,25 +86,6 @@ namespace HomeAssets.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "susususu-su01-9283-7465-001abcdetrn5",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c1f68159-5450-4b76-9057-7e2d0cf6c822",
-                            Email = "superuser@superuser.local",
-                            EmailConfirmed = true,
-                            Gender = 0,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "SUPERUSER@SUPERUSER.LOCAL",
-                            NormalizedUserName = "SUPERUSER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP9XRASyYOoHrTjAl8zLJfHJ9TOxenzsBEaDkCT6IPCi5d2qJvrGJyKDdwt43LxKZg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "349fc654-5fcd-49f2-b62a-51d392a18e20",
-                            TwoFactorEnabled = false,
-                            UserName = "superuser"
-                        });
                 });
 
             modelBuilder.Entity("HomeAssets.Models.HomeService", b =>
@@ -208,15 +191,6 @@ namespace HomeAssets.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("AspNetUserClaims");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 999999999,
-                            ClaimType = "Role",
-                            ClaimValue = "Administrador CON permisos de modificación",
-                            UserId = "susususu-su01-9283-7465-001abcdetrn5"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
