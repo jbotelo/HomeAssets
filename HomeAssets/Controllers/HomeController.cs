@@ -1,21 +1,20 @@
-﻿using HomeAssets.Models;
+﻿using HomeAssets.Domain.Interfaces;
+using HomeAssets.Domain.Models;
 using HomeAssets.Security;
 using HomeAssets.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 
 namespace HomeAssets.Controllers
 {
     [Authorize(Policy = "ServiceViewers")]
     public class HomeController : Controller
     {
-        private readonly IHomeServiceRepo homeServiceRepository;
+        private readonly IHomeServiceRepository homeServiceRepository;
         private readonly IDataProtector protector;
 
-        public HomeController(IHomeServiceRepo homeServiceRepository,
+        public HomeController(IHomeServiceRepository homeServiceRepository,
                               IDataProtectionProvider dataProtectionProvider,
                               DataProtectionPurposeStrings dataProtectionPurposeStrings)
         {

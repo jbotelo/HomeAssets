@@ -1,7 +1,6 @@
-﻿using HomeAssets.Models;
-using HomeAssets.Models.Attributes;
+﻿using HomeAssets.Domain.Models.Attributes;
+using HomeAssets.Domain.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HomeAssets.ViewModels

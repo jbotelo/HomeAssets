@@ -1,4 +1,4 @@
-﻿using HomeAssets.Models;
+﻿using HomeAssets.Domain.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace HomeAssets.ViewModels

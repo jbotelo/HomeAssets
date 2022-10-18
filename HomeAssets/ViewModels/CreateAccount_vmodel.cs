@@ -1,5 +1,5 @@
-﻿using HomeAssets.Models;
-using HomeAssets.Models.Attributes;
+﻿using HomeAssets.Domain.Models.Attributes;
+using HomeAssets.Domain.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 

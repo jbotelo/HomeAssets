@@ -1,15 +1,11 @@
-﻿using HomeAssets.Models;
-using HomeAssets.Models.ExtendedIdentity;
-using HomeAssets.Services;
+﻿using HomeAssets.Domain.Interfaces;
+using HomeAssets.Domain.Models;
+using HomeAssets.Infraestructure.ExtendedIdentity;
 using HomeAssets.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,10 +17,10 @@ namespace HomeAssets.Controllers
         private readonly SignInManager<App_IdentityUser> signInManager;
         private readonly ILogger<AccountController> logger;
         private readonly IMailService mailService;
-        private readonly IAuthorizedEmailRepo authorizedEmailRepo;
+        private readonly IAuthorizedEmailRepository authorizedEmailRepo;
 
         public AccountController(UserManager<App_IdentityUser> userManager, SignInManager<App_IdentityUser> signInManager,
-                                 ILogger<AccountController> logger, IMailService mailService, IAuthorizedEmailRepo authorizedEmailRepo)
+                                 ILogger<AccountController> logger, IMailService mailService, IAuthorizedEmailRepository authorizedEmailRepo)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
