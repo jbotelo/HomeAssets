@@ -1,4 +1,4 @@
-﻿using HomeAssets.Models.Attributes;
+﻿using HomeAssets.Domain.Models.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 

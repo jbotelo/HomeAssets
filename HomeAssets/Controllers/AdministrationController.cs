@@ -1,12 +1,11 @@
-﻿using HomeAssets.Models;
-using HomeAssets.Models.ExtendedIdentity;
+﻿using HomeAssets.Domain.Interfaces;
+using HomeAssets.Domain.Models;
+using HomeAssets.Infraestructure.ExtendedIdentity;
 using HomeAssets.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace HomeAssets.Controllers
 {
@@ -14,9 +13,9 @@ namespace HomeAssets.Controllers
     public class AdministrationController : Controller
     {
         private readonly UserManager<App_IdentityUser> userManager;
-        private readonly IAuthorizedEmailRepo authorizedEmailRepository;
+        private readonly IAuthorizedEmailRepository authorizedEmailRepository;
 
-        public AdministrationController(UserManager<App_IdentityUser> userManager, IAuthorizedEmailRepo authorizedEmailRepository)
+        public AdministrationController(UserManager<App_IdentityUser> userManager, IAuthorizedEmailRepository authorizedEmailRepository)
         {
             this.userManager = userManager;
             this.authorizedEmailRepository = authorizedEmailRepository;
